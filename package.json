@@ -1,0 +1,29 @@
+{
+  "name": "simplepgps",
+  "version": "1.0.0",
+  "description": "A Node.js project for reading data emitted from a GPS device attached to a Raspberry Pi",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reselbob/simplepgps.git"
+  },
+  "keywords": [
+    "gps"
+  ],
+  "author": "Bob Reselman <reselbob@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reselbob/simplepgps/issues"
+  },
+  "homepage": "https://github.com/reselbob/simplepgps#readme",
+  "dependencies": {
+    "app-root-path": "^3.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "node-gpsd": "^0.3.2",
+    "winston": "^3.3.3"
+  }
+}
