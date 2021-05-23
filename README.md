@@ -1,14 +1,14 @@
 # `simplegps`
 
 * [Purpose](#purpose)
-* [Preparing the hardware]()
-* [Getting `simplegps` Up and Running]()
-   * [Identifying a message broker]()
-   * [Configuring the required environment variables]()
-   * [Cloning the source code from GitHub]()
-   * [Installing the Node.js dependencies]()
-   * [Starting the application]()
-* [Monitoring GPS behavior]()
+* [Preparing the hardware](#preparing-the-hardware)
+* [Getting `simplegps` Up and Running](#getting-simplegps-up-and-running)
+   * [Identifying a message broker](#identifying-a-message-broker)
+   * [Configuring the required environment variables](#configuring-the-required-environment-variables)
+   * [Cloning the source code from GitHub](#cloning-the-source-code-from-github)
+   * [Installing the Node.js dependencies](#installing-the-nodejs-dependencies)
+   * [Starting the application](#starting-the-application)
+* [Monitoring GPS behavior](#monitoring-gps-behavior)
 
 
 [UNDER CONSTRUCTION]
