@@ -39,15 +39,23 @@ This project is intended to run on a Linux system. The project requires that the
 
 ### Cloning the source code from GitHub
 
-[TO BE PROVIDED]
+Execute the following command:
+
+`git clone https://github.com/reselbob/simplegps.git`
 
 ### Installing the Node.js dependencies
 
-[TO BE PROVIDED]
+Navigate to the working directory for `simplegps`
+
+`cd simplgps`
+
+Execute the following command:
+
+`npm install`
 
 ### Starting the application
 
-[TO BE PROVIDED]
+`node index.js`
 
 ## Monitoring GPS behavior
 
