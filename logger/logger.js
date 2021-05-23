@@ -8,6 +8,15 @@ const options = {
       handleExceptions: true,
       format: format.combine(format.timestamp(), format.json(), format.prettyPrint()),
     },
+    file: {
+      level: 'info',
+      filename: `${appRoot}/logs/app.log`,
+      handleExceptions: true,
+      json: true,
+      maxsize: 500000, // 5KB
+      maxFiles: 5,
+      colorize: false,
+    }
   };
 
 
@@ -28,7 +37,8 @@ const options = {
   const logger = new winston.createLogger({
     levels: myCustomLevels.levels,
     transports: [
-      new winston.transports.Console(options.console)
+      new winston.transports.Console(options.console),
+      new winston.transports.File(options.file),
     ],
     exitOnError: false, // do not exit on handled exceptions
   });

@@ -44,7 +44,7 @@ var listener = new Listener({
 });
 
 listener.connect(function () {
-  logger.info('Connected');
+  logger.info(`Connected to GPS device at: ${new Date()}`);
 });
 
 
