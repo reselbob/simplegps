@@ -49,7 +49,7 @@ This project is intended to run on a Linux system. The project requires that the
 
 [TO BE PROVIDED]
 
-### Monitoring GPS behavior
+## Monitoring GPS behavior
 
 [TO BE PROVIDED]
 
