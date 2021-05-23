@@ -15,8 +15,7 @@ const options = {
     console: {
       level: 'debug',
       handleExceptions: true,
-      format: format.combine(format.timestamp(), format.json()),
-      colorize: true,
+      format: format.combine(format.timestamp(), format.json(), format.prettyPrint()),
     },
   };
 
