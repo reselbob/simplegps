@@ -1,5 +1,7 @@
 # `simplegps`
 
+[UNDER CONSTRUCTION]
+
 * [Purpose](#purpose)
 * [Preparing the hardware](#preparing-the-hardware)
 * [Getting `simplegps` Up and Running](#getting-simplegps-up-and-running)
@@ -11,7 +13,7 @@
 * [Monitoring GPS behavior](#monitoring-gps-behavior)
 
 
-[UNDER CONSTRUCTION]
+
 
 ## Purpose:
 
