@@ -4,6 +4,7 @@
 
 * [Purpose](#purpose)
 * [Preparing the hardware](#preparing-the-hardware)
+* [Installing GPSD](#installing-gpsd)
 * [Getting `simplegps` Up and Running](#getting-simplegps-up-and-running)
    * [Identifying a message broker](#identifying-a-message-broker)
    * [Configuring the required environment variables](#configuring-the-required-environment-variables)
@@ -22,6 +23,10 @@ The purpose of this project is to demonstate how to consume geolocation informat
 This project is intended to run on a Linux system. The project requires that the [GPSD](https://www.linux-magazine.com/Issues/2018/210/Tutorial-gpsd) daemon is installed and running on the host machine.
 
 ## Preparing the hardware
+
+[TO BE PROVIDED]
+
+## Installing GPSD
 
 [TO BE PROVIDED]
 
