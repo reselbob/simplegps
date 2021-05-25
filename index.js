@@ -4,6 +4,7 @@ const { logger, winston } = require( './logger/logger');
 const { Listener } = require( 'node-gpsd');
 const gpggaParser  = require( './helpers/gpsHelper');
 const { kafkaProducer } = require( './helpers/kafkaHelper');
+const {getLastLine} = require('./helpers/fileHelper');
 
 //if the kafkaProducer is valid, connect it
 if (kafkaProducer) kafkaProducer.connect();
@@ -61,6 +62,12 @@ listener.watch({ class: 'WATCH', nmea: true });
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
+})
+
+app.get('/currentLocation', async (req, res) => {
+  //go to the log file and get the last line
+  const location = JSON.parse(await getLastLine());
+  res.send(location.message)
 })
 
 app.listen(port, () => {
