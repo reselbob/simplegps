@@ -123,7 +123,17 @@ You'll get output that looks similar to the following:
 
 ## Getting `simplegps` Up and Running
 
-Assuming the the GPS dongle is attached and operational, execute the following steps to get `simplegps` up and running. When the installation is complete you'll be able to see data associated with format type, `GPGGA`, coming in from the attached GPS device in the log file at `./logs/app.log`. Also, the incoming all the raw GPS data will be shown as `stdout` in the terminal window or development console.
+Assuming the the GPS dongle is attached and operational, execute the following steps to get `simplegps` up and running. When the installation is complete you'll be able to see data associated with format type, `GPGGA`, coming in from the attached GPS device in the log file at `./logs/app.log`, like so:
+
+```
+{"message":{"messageTypeId":"$GPGGA","utcTime":"213208","latitude":"3401.2137","latHemisphere":"N","longitude":"11824.6725","longHemispere":"W","positionFixIndicator":"2","satelliteNumber":"05","HDOP":"3.01","altitude":"23.44","altitudeUnits":"M","heightAboveWGS84Ellipsoid":"-32.003","heightAboveWGS84EllipsoidUnits":"M","timeSinceLastUpdate":"","checkSum":"*49"},"level":"gpsEvent"}
+{"message":{"messageTypeId":"$GPGGA","utcTime":"213208.00","latitude":"3401.21367","latHemisphere":"N","longitude":"11824.67247","longHemispere":"W","positionFixIndicator":"2","satelliteNumber":"05","HDOP":"3.01","altitude":"24.3","altitudeUnits":"M","heightAboveWGS84Ellipsoid":"-32.9","heightAboveWGS84EllipsoidUnits":"M","timeSinceLastUpdate":"","checkSum":"0000*59"},"level":"gpsEvent"}
+{"message":{"messageTypeId":"$GPGGA","utcTime":"213209","latitude":"3401.2136","latHemisphere":"N","longitude":"11824.6724","longHemispere":"W","positionFixIndicator":"2","satelliteNumber":"05","HDOP":"3.01","altitude":"23.08","altitudeUnits":"M","heightAboveWGS84Ellipsoid":"-32.003","heightAboveWGS84EllipsoidUnits":"M","timeSinceLastUpdate":"","checkSum":"*40"},"level":"gpsEvent"}
+{"message":{"messageTypeId":"$GPGGA","utcTime":"213209.00","latitude":"3401.21364","latHemisphere":"N","longitude":"11824.67241","longHemispere":"W","positionFixIndicator":"2","satelliteNumber":"05","HDOP":"3.01","altitude":"24.0","altitudeUnits":"M","heightAboveWGS84Ellipsoid":"-32.9","heightAboveWGS84EllipsoidUnits":"M","timeSinceLastUpdate":"","checkSum":"0000*5E"},"level":"gpsEvent"}
+
+```
+
+Also, the incoming all the raw GPS data will be shown as `stdout` in the terminal window or development console.
 
 ### Cloning the source code from GitHub
 
