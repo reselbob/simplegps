@@ -30,7 +30,6 @@ listener.connect(function () {
 listener.on('raw', function (data) {
   if (data.includes('GPGGA')) {
     const result = gpggaParser(data)
-    sendEvent(result);
     logger.gpsEvent(result);
   }
 });

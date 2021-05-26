@@ -123,15 +123,7 @@ You'll get output that looks similar to the following:
 
 ## Getting `simplegps` Up and Running
 
-[TO BE PROVIDED]
-
-### Identifying a message broker
-
-[TO BE PROVIDED]
-
-### Configuring the required environment variables
-
-[TO BE PROVIDED]
+Assuming the the GPS dongle is attached and operational, execute the following steps to get `simplegps` up and running. When the installation is complete you'll be able to see data associated with format type, `GPGGA`, coming in from the attached GPS device in the log file at `./logs/app.log`. Also, the incoming all the raw GPS data will be shown as `stdout` in the terminal window or development console.
 
 ### Cloning the source code from GitHub
 
