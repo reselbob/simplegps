@@ -30,13 +30,13 @@ In order to use this microservice you are going to have have a Linux computer wi
 
 You'll plug the GPS Dongle into a USB port of your Linux computer or Raspberry Pi as shown in the figure below:
 
-[FIGURE HERE]
+![usb-device](./errata/gps-dongle.jpg)
 
 ### Identify the device 
 
-The GPS Dongle needs to be identified `/dev` directory of the host computer. One way make the identification is to get a listing of files in the `/dev` diretory before the Dongle is installed.
+The device file for GPS Dongle needs to be identified. Typically it's in the `/dev` directory of the host computer. One way make the identification is to get a listing of files in the `/dev` diretory before the Dongle is installed.
 
-When I added a Dongle to my machine is appeared in a file name prefix of `ttyACM`. Thus, **before** I attached the Dongle listed the files in the `/dev` folder filtering on the prefix, `ttyACM` like so:
+When I added a Dongle to my machine it appeared with a filename prefix of `ttyACM`. Thus, **before** I attached the Dongle, I listed the files in the `/dev` folder filtering on the prefix, `ttyACM` like so:
 
 `$ ls /dev | grep ttyACM`
 
@@ -46,7 +46,7 @@ I got the result:
 
 `ttyACM0`
 
-Then I inserted the GPS Dongle into a USB port and took another look at the `/dev` directory, like so, againt:
+Then I inserted the GPS Dongle into a USB port and took another look at the `/dev` directory, like so, again:
 
 `$ ls /dev | grep ttyACM`
 
@@ -82,7 +82,7 @@ Used `systemctl` to make it so `gpsd` starts on bootup.
 
 `sudo systemctl enable gpsd`
 
-Startup GPSD and GPSD.socket
+Start up GPSD and GPSD.socket
 
 `sudo systemctl start gpsd`
 
@@ -183,8 +183,49 @@ You'll get output similar to the following:
 
 ## Monitoring GPS behavior
 
+## Fast Troubleshooting
+
+Sometimes you might have to expicitly configure GPSD to read the correct device. 
+
+I had to do this once or twice. In my case, I had to tell GPSD exactly which device to use, which on my machine was at `/dev/ttyACM1`.
+
+First, I had to stop GPSD dead in its tracks. To do this I exected the following command:
+
+`sudo killall gpsd`
+
+Then, I updated the file `/etc/default/gpsd` to the following. 
+
+```
+# Default settings for the gpsd init script and the hotplug wrapper.
+
+# Start the gpsd daemon automatically at boot time
+START_DAEMON="true"
+
+# Use USB hotplugging to add new USB devices automatically to the daemon
+USBAUTO="true"
+
+# Devices gpsd should collect to at boot time.
+# They need to be read/writeable, either by user gpsd or the group dialout.
+DEVICES="/dev/ttyACM1"
+
+# Other options you want to pass to gpsd
+GPSD_OPTIONS="-n -G -b"
+GPSD_SOCKET="/var/run/gpsd.sock"
+#end of file gpsd
+
+```
+
+I changed the line to the one shown at `DEVICES="/dev/ttyACM1"`. Also, a set `USBAUTO` to `true` as follows:
+
+`USBAUTO="true"`
+
+Finally, I restarted `gpsd` like so:
+
+```
+sudo systemctl start gpsd
+sudo systemctl start gpsd.socket
+```
 
 
-[TO BE PROVIDED]
 
 
