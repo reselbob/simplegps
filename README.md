@@ -59,11 +59,11 @@ ttyACM1
 
 Thus, I inferred that the device file for the GPS Dongle is `/dev/ttyACM1`.
 
-Save this piece of information. You might need it later, if you have trouble reading data off of the GPS Dongle and need to do some troubleshooting or declare congifuration settings for the `GPSD` progam that you'll install next.
+Save this piece of information. You might need it later, if you have trouble reading data off of the GPS Dongle and need to do some troubleshooting or declare congifuration settings for the `GPSD` daemon that you'll install next.
 
 ## Installing GPSD
 
-GPSD in a Linux program that will bind your GPS Dongle to the operating system and the read data coming off the Dongle from satellites circling the planet. Take a minue to think about this: for less than $15 USD you can buy a piece of equipment that will download data from not one, but many satellites circling the globe for FREE!!!!!
+[GPSD](https://gpsd.gitlab.io/gpsd/) in a Linux daemon that will bind your GPS Dongle to the operating system and the read data coming off the Dongle from satellites circling the planet. Take a minue to think about this: for less than $15 USD you can buy a piece of equipment that will download data from not one, but many satellites circling the globe for FREE!!!!!
 
 But, I digress.
 
