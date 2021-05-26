@@ -77,17 +77,17 @@ Then install GPSD:
 
 `sudo apt install GPSD`
 
-Used `systemctl` to make it so `gpsd` starts on bootup.
+Use `systemctl` to make it so `gpsd` starts on bootup:
 
 `sudo systemctl enable gpsd`
 
-Start up GPSD and GPSD.socket
-
+Start up `gpsd` and `gpsd.socket`
+:
 `sudo systemctl start gpsd`
 
 `sudo systemctl start gpsd.socket`
 
-You can checkout if GPSD is running by using the `cgps` utlity that  ships with the download.
+You can verify that GPSD is running by using the `cgps` utlity that  ships with the download.
 
 `cgps`
 
@@ -119,7 +119,7 @@ You'll get output that looks similar to the following:
 │ Grid Square:            DM04ta            ││                                 │
 └───────────────────────────────────────────┘└─────────────────────────────────┘
 ```
-`cgps` is a useful utilty but be advised it takes a minute of two to "warm up' to receive and display gps data. If for some reason you are not seeing data in the dashboard and not seeing raw gps data being outputted below the dashboard, you've got a problem with your GPSD installation. You'll need to do some troubleshooting. 
+`cgps` is a useful utilty **but be advised**, it takes a minute of two to "warm up' in order to receive and display gps data. If for some reason you are not seeing data in the dashboard or not seeing raw gps data being outputted below the dashboard, you've got a problem with your GPSD installation. You'll need to do some troubleshooting. 
 
 ## Getting `simplegps` Up and Running
 
