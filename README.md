@@ -4,10 +4,10 @@
 
 * [Purpose](#purpose)
 * [Preparing the hardware](#preparing-the-hardware)
+    * [Attaching the GPS dongle](#attaching-the-GPS-dongle)
+    * [Identify the device](#identify-the-device)
 * [Installing GPSD](#installing-gpsd)
 * [Getting `simplegps` Up and Running](#getting-simplegps-up-and-running)
-   * [Identifying a message broker](#identifying-a-message-broker)
-   * [Configuring the required environment variables](#configuring-the-required-environment-variables)
    * [Cloning the source code from GitHub](#cloning-the-source-code-from-github)
    * [Installing the Node.js dependencies](#installing-the-nodejs-dependencies)
    * [Starting the application](#starting-the-application)
@@ -26,7 +26,7 @@ This project is intended to run on a Linux system. The project requires that the
 
 In order to use this microservice you are going to have have a Linux computer with a GPS Dongle attached directly to the machine. The code was developed using a [Onyehn VK-162 G-Mouse USB GPS Dongle](https://www.amazon.com/gp/product/B07GJGSZB9/). It's an inexpensive piece of equipment that costs less than $15 USD.
 
-### Attaching the Dongle
+### Attaching the GPS dongle
 
 You'll plug the GPS Dongle into a USB port of your Linux computer or Raspberry Pi as shown in the figure below:
 
