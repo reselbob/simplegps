@@ -17,12 +17,15 @@ app.use(morgan('combined', { stream: winston.stream }));
 
 const sendEvent = async (eventMessage) => {
   if (kafkaProducer) {
-    const topic = process.env.SIMPLEGPS_KAFKA_TOPIC || 'test_topic';
-    await producer.send({
+    const topic = process.env.SIMPLEGPS_KAFKA_TOPIC || 'gps';
+    await kafkaProducer.send({
       topic: topic,
       messages: [
         { value: eventMessage },
       ]
+    })
+    .catch(e => {
+      logger.error(e);
     });
     const info = {
       message: 'Sent GPS info to Kakfa',
