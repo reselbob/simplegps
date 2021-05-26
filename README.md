@@ -63,7 +63,7 @@ Save this piece of information. You might need it later, if you have trouble rea
 
 ## Installing GPSD
 
-[GPSD](https://gpsd.gitlab.io/gpsd/) in a Linux daemon that will bind your GPS Dongle to the operating system and then read data coming off the Dongle from satellites circling the planet. Take a minute to think about this: for less than $15 USD you can buy a piece of equipment that will download data from not one, but many satellites circling the globe. And the [US Space Command](https://www.spacecom.mil/#/) provides GPS for s in nothing, zip! 
+[GPSD](https://gpsd.gitlab.io/gpsd/) in a Linux daemon that will bind your GPS Dongle to the operating system and then read data coming off the Dongle from satellites circling the planet. Take a minute to think about this: for less than $15 USD you can buy a piece of equipment that will download data from not one, but many satellites circling the globe. And the [US Space Command](https://www.spacecom.mil/#/) provides GPS for free, as in nothing, zip! 
 
 But, I digress.
 
