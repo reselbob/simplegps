@@ -120,7 +120,7 @@ You'll get output that looks similar to the following:
 │ Grid Square:            DM04ta            ││                                 │
 └───────────────────────────────────────────┘└─────────────────────────────────┘
 ```
-`cgps` is a useful utilty but be advised it takes a minute of two to "warm up' to receive and display gps data. If for some reason you are not seeing data in the dashboard and not seeing gps data being outputted below the dashboard, you've got a problem with your GPSD installation. You'll need to do some troubleshooting. 
+`cgps` is a useful utilty but be advised it takes a minute of two to "warm up' to receive and display gps data. If for some reason you are not seeing data in the dashboard and not seeing raw gps data being outputted below the dashboard, you've got a problem with your GPSD installation. You'll need to do some troubleshooting. 
 
 ## Getting `simplegps` Up and Running
 
@@ -154,7 +154,36 @@ Execute the following command:
 
 `node index.js`
 
+## Getting the current location
+
+`curl http://localhost:3000/currentLocation`
+
+You'll get output similar to the following:
+
+```
+{
+  "messageTypeId": "$GPGGA",
+  "utcTime": "054707",
+  "latitude": "3401.2074",
+  "latHemisphere": "N",
+  "longitude": "11824.6769",
+  "longHemispere": "W",
+  "positionFixIndicator": "1",
+  "satelliteNumber": "06",
+  "HDOP": "1.90",
+  "altitude": "30.58",
+  "altitudeUnits": "M",
+  "heightAboveWGS84Ellipsoid": "-32.003",
+  "heightAboveWGS84EllipsoidUnits": "M",
+  "timeSinceLastUpdate": "",
+  "checkSum": "*49"
+}
+
+```
+
 ## Monitoring GPS behavior
+
+
 
 [TO BE PROVIDED]
 
