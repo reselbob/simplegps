@@ -59,7 +59,7 @@ ttyACM1
 
 Thus, I inferred that the device file for the GPS Dongle is `/dev/ttyACM1`.
 
-Save this piece of information. You might need it later, if you have trouble reading data off of the GPS Dongle and need to do some troubleshooting or declare congifuration settings for the `GPSD` daemon that you'll install next.
+Save this piece of information. You might need it later, if you have trouble reading data off of the GPS Dongle and need to do some troubleshooting or declare configuration settings for the `GPSD` daemon that you'll install next.
 
 ## Installing GPSD
 
