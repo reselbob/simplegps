@@ -18,7 +18,7 @@
 
 ## Purpose:
 
-The purpose of this project is to demonstate how to consume geolocation information captured by a GPS device connected to a Raspberry Pi and then publish the event information to a message broker such as Redis or Kafaka.
+The purpose of this project is to demonstate how to consume geolocation information captured by a GPS device connected to a Linux desktop, laptop or Raspberry Pi computer and then publish the event information to logs.
 
 This project is intended to run on a Linux system. The project requires that the [GPSD](https://www.linux-magazine.com/Issues/2018/210/Tutorial-gpsd) daemon is installed and running on the host machine.
 
