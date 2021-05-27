@@ -159,7 +159,7 @@ Execute the following command:
 
 ## Getting the current location
 
-The `simplegps` microservice exposes an endpoint that returns the current location of the GPS Dongle. To find the current location of the GPS Dongle, execute the following command:
+The `simplegps` microservice exposes an endpoint that returns the current location of the GPS Dongle. To find the current location of the GPS Dongle, in a separate terminal window execute the following command:
 
 `curl http://localhost:3000/currentLocation`
 
