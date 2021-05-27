@@ -81,8 +81,8 @@ Use `systemctl` to make it so `gpsd` starts on bootup:
 
 `sudo systemctl enable gpsd`
 
-Start up `gpsd` and `gpsd.socket`
-:
+Start up `gpsd` and `gpsd.socket`:
+
 `sudo systemctl start gpsd`
 
 `sudo systemctl start gpsd.socket`
