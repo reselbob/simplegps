@@ -186,13 +186,23 @@ You'll get output similar to the following:
 
 ## Monitoring GPS behavior
 
+The easiest way to monitor GPS acitivity it to watch the log file `/logs/app.log` by executing the following command from with the working director of this project like so:
+
+`sudo chmod u+x ./logs/app.log`
+
+then call:
+
+`watch ./logs/app.log`
+
+
+
 ## Fast Troubleshooting
 
 Sometimes you might have to expicitly configure GPSD to read the correct device. 
 
 I had to do this once or twice. In my case, I had to tell GPSD exactly which device to use, which on my machine was at `/dev/ttyACM1`.
 
-First, I had to stop GPSD dead in its tracks. To do this I exected the following command:
+First, I had to stop GPSD dead in its tracks. To do this I executed the following command:
 
 `sudo killall gpsd`
 
