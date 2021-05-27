@@ -36,7 +36,7 @@ You'll plug the GPS Dongle into a USB port of your Linux computer or Raspberry P
 
 ### Identify the device 
 
-The device file for GPS Dongle needs to be identified. Typically it's in the `/dev` directory of the host computer. One way make the identification is to get a listing of files in the `/dev` diretory before the Dongle is installed.
+The [device file](https://www.cyberciti.biz/faq/understanding-unix-linux-bsd-device-files/) for GPS Dongle needs to be identified. Typically it's in the `/dev` directory of the host computer. One way make the identification is to get a listing of files in the `/dev` diretory before the Dongle is installed.
 
 When I first added the Dongle to my machine it appeared with a filename prefix of `ttyACM`. Thus, **before** I attached the Dongle, I listed the files in the `/dev` folder filtering on the prefix, `ttyACM` like so:
 
