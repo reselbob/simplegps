@@ -18,7 +18,9 @@
 
 ## Purpose:
 
-The purpose of this project is to demonstate how to consume geolocation information captured by a GPS device connected to a Linux desktop, laptop or Raspberry Pi computer and then publish the event information to logs.
+The purpose of this project is to demonstate how to consume geolocation information captured by a GPS device connected to a Linux desktop, laptop or Raspberry Pi computer. Then, once connected the project will publish GPS information to the log located at `./logs/app.log`.
+
+The project also shows you how to monitor GPS data being written to the log file.
 
 This project is intended to run on a Linux system. The project requires that the [GPSD](https://www.linux-magazine.com/Issues/2018/210/Tutorial-gpsd) daemon is installed and running on the host machine.
 
