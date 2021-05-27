@@ -26,7 +26,7 @@ This project is intended to run on a Linux system. The project requires that the
 
 ## Preparing the hardware
 
-In order to use this microservice you are going to have have a Linux computer with a GPS Dongle attached directly to the machine. The code was developed using a [Onyehn VK-162 G-Mouse USB GPS Dongle](https://www.amazon.com/gp/product/B07GJGSZB9/). It's an inexpensive piece of equipment that costs less than $15 USD.
+In order to use the project's code you need to have a Linux computer with a GPS Dongle attached directly to the machine. The code was developed using a [Onyehn VK-162 G-Mouse USB GPS Dongle](https://www.amazon.com/gp/product/B07GJGSZB9/). It's an inexpensive piece of equipment that costs less than $15 USD.
 
 ### Attaching the GPS dongle
 
