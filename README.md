@@ -83,11 +83,19 @@ Use `systemctl` to make it so `gpsd` starts on bootup:
 
 `sudo systemctl enable gpsd`
 
-Start up `gpsd` and `gpsd.socket`:
+`sudo systemctl enable gpsd.socket`
 
-`sudo systemctl start gpsd`
+Start up `gpsd.socket`:
 
 `sudo systemctl start gpsd.socket`
+
+Start up `gpsd` like so:
+
+`gpsd /dev/ACM1`
+
+**WHERE**
+
+`/dev/ACM1` is the location of the device file that is associated with the installed GPS device. The name of your device file
 
 You can verify that GPSD is running by using the `cgps` utlity that  ships with the download.
 
