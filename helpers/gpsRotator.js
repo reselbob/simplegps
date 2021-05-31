@@ -10,7 +10,7 @@ const arr = [];
     Adds a gps location to the in-memory array
 */
 const pushGps = (gps) => {
-    if(arr.length > 10){
+    if(arr.length > 9){
         arr.shift()
     }
     arr.push(gps);
