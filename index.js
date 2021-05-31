@@ -9,7 +9,7 @@ const {pushGps, getLastGps} = require('./helpers/gpsRotator')
 const app = express();
 const port = process.env.GPS_APP_PORT || 3000;
 
-app.use(morgan('combined', { stream: winston.stream }));
+app.use(morgan('combined', { stream: winston.stream.write }));
 
 var listener = new Listener({
   port: 2947,

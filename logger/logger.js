@@ -9,7 +9,7 @@ const options = {
       format: format.combine(format.timestamp(), format.json(), format.prettyPrint()),
     },
     file: {
-      level: 'info',
+      level: 'debug',
       filename: `${appRoot}/logs/app.log`,
       handleExceptions: true,
       json: true,
