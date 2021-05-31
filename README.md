@@ -75,9 +75,9 @@ Update `apt`:
 
 `sudo apt update`
 
-Then install GPSD:
+Then install GPSD and the GPSD client tools
 
-`sudo apt install GPSD`
+`sudo apt install gpsd gpsd-clients -y`
 
 Use `systemctl` to make it so `gpsd` starts on bootup:
 
