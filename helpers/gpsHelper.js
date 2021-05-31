@@ -6,7 +6,7 @@ const gpggaParser = (gpsSentence) => {
     gpsObj.latitude = arr[2];
     gpsObj.latHemisphere = arr[3];
     gpsObj.longitude = arr[4];
-    gpsObj.longHemispere = arr[5];
+    gpsObj.longHemisphere = arr[5];
     gpsObj.positionFixIndicator = arr[6];
     gpsObj.satelliteNumber = arr[7];
     gpsObj.HDOP = arr[8];
