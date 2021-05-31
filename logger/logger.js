@@ -13,8 +13,19 @@ const options = {
       filename: `${appRoot}/logs/app.log`,
       handleExceptions: true,
       json: true,
-      maxsize: 500000, // 5KB
-      maxFiles: 5,
+      maxsize: 500000, // 500KB
+      maxFiles: 2,
+      maxFiles: '1d',
+      colorize: false,
+    },
+    gps: {
+      level: 'gpsEvent',
+      filename: `${appRoot}/logs/gps.log`,
+      handleExceptions: true,
+      json: true,
+      maxsize: 500000, // 500KB
+      maxFiles: 2,
+      maxFiles: '1d',
       colorize: false,
     }
   };
@@ -39,6 +50,7 @@ const options = {
     transports: [
       new winston.transports.Console(options.console),
       new winston.transports.File(options.file),
+      new winston.transports.File(options.gps)
     ],
     exitOnError: false, // do not exit on handled exceptions
   });

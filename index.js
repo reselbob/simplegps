@@ -4,6 +4,7 @@ const { logger, winston } = require( './logger/logger');
 const { Listener } = require( 'node-gpsd');
 const gpggaParser  = require( './helpers/gpsHelper');
 const {getLastLine} = require('./helpers/fileHelper');
+const {pushGps, getLastGps} = require('./helpers/gpsRotator')
 
 const app = express();
 const port = process.env.GPS_APP_PORT || 3000;
@@ -30,6 +31,7 @@ listener.connect(function () {
 listener.on('raw', function (data) {
   if (data.includes('GPGGA')) {
     const result = gpggaParser(data)
+    pushGps(result);
     logger.gpsEvent(result);
   }
 });
@@ -41,9 +43,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/currentLocation', async (req, res) => {
-  //go to the log file and get the last line
-  const location = JSON.parse(await getLastLine());
-  res.send(location.message)
+  const location = getLastGps();
+  res.send(location);
 })
 
   /*
@@ -71,8 +72,10 @@ app.get('/currentLocation', async (req, res) => {
 app.post('/isnear', async (req, res) => {
 
   //go to the log file and get the last line
-  const location = JSON.parse(await getLastLine());
-  res.send(location.message)
+  const otherLocation = req.body;
+  const location = getLastGps();
+  throw new Error('Not Implemented');
+  res.send(location)
 })
 
 app.listen(port, () => {
