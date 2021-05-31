@@ -95,9 +95,9 @@ Start up `gpsd` like so:
 
 **WHERE**
 
-`/dev/ACM1` is the location of the device file that is associated with the installed GPS device. The name of your device file
+`/dev/ACM1` is the location of the device file that is associated with the installed GPS device. The name of your device file might be different. 
 
-You can verify that GPSD is running by using the `cgps` utlity that  ships with the download.
+You can verify that GPSD is running by using the `cgps` utlity that you downloaded as part of the client tools.
 
 `cgps`
 
