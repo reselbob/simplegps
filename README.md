@@ -12,7 +12,7 @@
    * [Installing the Node.js dependencies](#installing-the-nodejs-dependencies)
    * [Starting the application](#starting-the-application)
 * [Monitoring GPS behavior](#monitoring-gps-behavior)
-* [Direct Link to Logger Code](blob/main/logger/logger.js)
+* [Direct Link to Logger Code](logger/logger.js)
 
 
 
