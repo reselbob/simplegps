@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const { logger, winston } = require('./logger/logger');
 const { Listener } = require('node-gpsd');
-const gpggaParser = require('./helpers/gpsHelper');
+const {gpggaParser, gpggaLatLongConvert} = require('./helpers/gpsHelper');
 const { pushGps, getLastGps } = require('./helpers/gpsRotator')
 const { getDistance } = require('./helpers/geoDiffer');
 
@@ -74,7 +74,7 @@ Example
 
 */
 app.post('/distanceFromMe', (req, res) => {
-  const yourLocation = req.body;
+  const yourLocation = gpggaLatLongConvert(req.body);
   const myLocation = getLastGps();
   const distance = getDistance(myLocation, yourLocation);
   res.send(distance);

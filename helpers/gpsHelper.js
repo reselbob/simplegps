@@ -11,6 +11,24 @@ const parseArrayForNumbers = (arr) => {
     return arr;
 }
 
+/*
+ converts lat/long data into ##.###### format
+*/
+const gpggaLatLongConvert =  (gpsObj) => {
+
+    //TODO Clean up float conversion redundancy
+    if(isNumeric(gpsObj.latitude)){
+        gpsObj.latitude = parseFloat(gpsObj.latitude);
+        if(gpsObj.latitude > 90) gpsObj.latitude = (gpsObj.latitude/100).toFixed(6)
+    }
+
+    if(isNumeric(gpsObj.longitude)){
+        gpsObj.longitude = parseFloat(gpsObj.longitude);
+        if(gpsObj.longitude > 180) gpsObj.longitude = (gpsObj.longitude/100).toFixed(6)
+    }
+    return gpsObj
+}
+
 
 const gpggaParser = (gpsSentence) => {
     logger.debug({location: 'gpsHelper', gpsSentence})
@@ -36,4 +54,4 @@ const gpggaParser = (gpsSentence) => {
 
 }
 
-module.exports = gpggaParser;
+module.exports = {gpggaParser, gpggaLatLongConvert};

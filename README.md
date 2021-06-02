@@ -258,7 +258,15 @@ curl localhost:3000/currentLocation
 
 **`curl`example** 
 
-`[TO BE PROVIDED]`
+```
+curl -X POST -H "Content-Type: application/json" -d '{"latitude":3401.2106,"latHemisphere":"N","longitude":11824.67467,"longHemisphere":"W"}' http://localhost:3000/distanceFromMe
+```
+
+**Response:**
+```
+{"distance_earth_radians":6.290072786871982e-7,"distance":"4.1","unit":"m"}
+
+```
 
 ## Fast Troubleshooting
 
