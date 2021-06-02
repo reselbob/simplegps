@@ -1,12 +1,17 @@
 const express = require('express');
-const morgan = require( 'morgan');
-const { logger, winston } = require( './logger/logger');
-const { Listener } = require( 'node-gpsd');
-const gpggaParser  = require( './helpers/gpsHelper');
-const {pushGps, getLastGps} = require('./helpers/gpsRotator')
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const { logger, winston } = require('./logger/logger');
+const { Listener } = require('node-gpsd');
+const gpggaParser = require('./helpers/gpsHelper');
+const { pushGps, getLastGps } = require('./helpers/gpsRotator')
+const { getDistance } = require('./helpers/geoDiffer');
 
 const app = express();
 const port = process.env.GPS_APP_PORT || 3000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(morgan('combined', { stream: winston.stream.write }));
 
@@ -41,40 +46,38 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get('/currentLocation', async (req, res) => {
+app.get('/currentLocation',  (req, res) => {
   const location = getLastGps();
   res.send(location);
 })
 
-  /*
-  takes a JSON structure as follows
-  {
-    latitude: double,
-    latHemisphere: 'N' or 'S'
-    longitude: double,
-    longHemisphere: 'E' or 'W',
-    altitude: double,
-    altitudeUnit: defaults to 'M', meters
-  }
+/*
+takes a JSON structure as follows
+{
+  latitude: double,
+  latHemisphere: 'N' or 'S'
+  longitude: double,
+  longHemisphere: 'E' or 'W',
+  altitude: double,
+  altitudeUnit: defaults to 'M', meters
+}
 
-  Example
-   {
-    latitude: 3401.2106,
-    latHemisphere:'N'
-    longitude: 11824.67467,
-    longHemisphere:'W',
-    altitude: 21.7,
-    altitudeUnit: 'M'
-  }
+Example
+ {
+  latitude: 3401.2106,
+  latHemisphere:'N',
+  longitude: 11824.67467,
+  longHemisphere:'W',
+  altitude: 21.7,
+  altitudeUnit: 'M'
+}
 
-  */
-app.post('/isnear', async (req, res) => {
-
-  //go to the log file and get the last line
-  const otherLocation = req.body;
-  const location = getLastGps();
-  throw new Error('Not Implemented');
-  res.send(location)
+*/
+app.post('/isnear', (req, res) => {
+  const yourLocation = req.body;
+  const myLocation = getLastGps();
+  const distance = getDistance(myLocation, yourLocation);
+  res.send(distance);
 })
 
 const server = app.listen(port, () => {
@@ -85,10 +88,11 @@ const server = app.listen(port, () => {
   logger.info(obj)
 })
 
-const shutdown = () => {
-  logger.info(`Server shutting down at ${new Date()}`);
-  listener.disconnect();
-  server.close();
+const shutdown = async () => {
+  logger.info(`GPS is disconnecting at ${new Date()}`);
+  await listener.disconnect();
+  logger.info(`Server is shutting down at ${new Date()}`);
+  await server.close();
 };
 
-module.exports = {server, shutdown };
+module.exports = { server, shutdown };
