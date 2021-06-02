@@ -73,7 +73,7 @@ Example
 }
 
 */
-app.post('/isnear', (req, res) => {
+app.post('/distanceFromMe', (req, res) => {
   const yourLocation = req.body;
   const myLocation = getLastGps();
   const distance = getDistance(myLocation, yourLocation);

@@ -11,7 +11,9 @@
    * [Cloning the source code from GitHub](#cloning-the-source-code-from-github)
    * [Installing the Node.js dependencies](#installing-the-nodejs-dependencies)
    * [Starting the application](#starting-the-application)
+* [Using the `simplegps` API](#using-the-simplegps-api) 
 * [Monitoring GPS behavior](#monitoring-gps-behavior)
+* [Fast Troubleshooting](#fast-troubleshooting)
 
 
 
@@ -204,7 +206,46 @@ then call:
 
 `watch ./logs/app.log`
 
+## Using the `simplegps` API
 
+### `GET /currentLocation`
+
+**`curl`example** 
+
+`[TO BE PROVIDED]`
+
+### `POST /distanceFromMe`
+
+
+  Takes a JSON structures as follows:
+
+  ```
+  {
+    latitude: double,
+    latHemisphere: 'N' or 'S',
+    longitude: double,
+    longHemisphere: 'E' or 'W',
+    altitude: double,
+    altitudeUnit: defaults to 'M', meters
+  }
+```
+  Example:
+
+```
+   {
+    latitude: 3401.2106,
+    latHemisphere:'N'
+    longitude: 11824.67467,
+    longHemisphere:'W',
+    altitude: 21.7,
+    altitudeUnit: 'M'
+  }
+
+```
+
+**`curl`example** 
+
+`[TO BE PROVIDED]`
 
 ## Fast Troubleshooting
 

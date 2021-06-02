@@ -39,7 +39,7 @@ describe('API Tests: ', () => {
                 expect(res.body).to.be.an('object');
                 const location = res.body;
                 const locationRes = await supertest(server)
-                    .post('/isnear')
+                    .post('/distanceFromMe')
                     .set('Content-type', 'application/json')
                     .send(location);
                 logger.debug({ test: 'Can access GET distance', result: res.body })
@@ -61,7 +61,7 @@ describe('API Tests: ', () => {
         }
 
         const res = await supertest(server)
-            .post('/isnear')
+            .post('/distanceFromMe')
             .set('Content-type', 'application/json')
             .send(yourLocation);
         logger.debug({ test: 'Can access GET distance', result: res.body })
