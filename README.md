@@ -217,7 +217,7 @@ then call:
 ### `POST /distanceFromMe`
 
 
-  Takes a JSON structures as follows:
+  Takes a JSON structure as follows:
 
   ```
   {
@@ -225,11 +225,13 @@ then call:
     latHemisphere: 'N' or 'S',
     longitude: double,
     longHemisphere: 'E' or 'W',
-    altitude: double,
-    altitudeUnit: defaults to 'M', meters
+    altitude: double,  //optional
+    altitudeUnit: defaults to 'M', meters //optional
   }
 ```
-  Example:
+ The JSON structure describes the position of the other GPS device to report the distance from. The endpoint `/distanceFromMe` report that distance that the other device is from the "me".
+
+ **Example:**
 
 ```
    {
