@@ -3,7 +3,6 @@ const morgan = require( 'morgan');
 const { logger, winston } = require( './logger/logger');
 const { Listener } = require( 'node-gpsd');
 const gpggaParser  = require( './helpers/gpsHelper');
-const {getLastLine} = require('./helpers/fileHelper');
 const {pushGps, getLastGps} = require('./helpers/gpsRotator')
 
 const app = express();
@@ -78,10 +77,18 @@ app.post('/isnear', async (req, res) => {
   res.send(location)
 })
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   const obj = {};
   obj.port = port;
   obj.startTime = new Date();
   obj.host = process.env.GPS_APP_HOST || 'localhost';
   logger.info(obj)
 })
+
+const shutdown = () => {
+  logger.info(`Server shutting down at ${new Date()}`);
+  listener.disconnect();
+  server.close();
+};
+
+module.exports = {server, shutdown };

@@ -4,7 +4,8 @@
   "description": "A Node.js project for reading data emitted from a GPS device attached to a Raspberry Pi",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha test/api-tests.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,10 @@
     "node-gpsd": "^0.3.2",
     "read-last-lines": "^1.8.0",
     "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0",
+    "supertest": "^6.1.3"
   }
 }
