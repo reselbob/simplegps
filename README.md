@@ -229,7 +229,7 @@ then call:
     altitudeUnit: defaults to 'M', meters //optional
   }
 ```
- The JSON structure describes the position of the other GPS device to report the distance from. The endpoint `/distanceFromMe` report that distance that the other device is from the "me".
+ The JSON structure describes the position of the other GPS device against which distance will be measured. The endpoint `/distanceFromMe` reports the distance that the other device is from the "me".
 
  **Example:**
 
