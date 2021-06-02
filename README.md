@@ -210,9 +210,20 @@ then call:
 
 ### `GET /currentLocation`
 
+The `simplegps` microservice exposes an endpoint that returns the current location of the device accoring to its GPS reading from the an attached GPS listening device.
+
 **`curl`example** 
 
-`[TO BE PROVIDED]`
+```
+curl localhost:3000/currentLocation
+```
+**Response**
+
+```
+
+{"messageTypeId":"$GPGGA","utcTime":55712,"latitude":3401.20914,"latHemisphere":"N","longitude":11824.67948,"longHemisphere":"W","positionFixIndicator":1,"satelliteNumber":5,"HDOP":2.99,"altitude":37.6,"altitudeUnits":"M","heightAboveWGS84Ellipsoid":-32.9,"heightAboveWGS84EllipsoidUnits":"M","timeSinceLastUpdate":null,"checkSum":"*58"}
+
+```
 
 ### `POST /distanceFromMe`
 
