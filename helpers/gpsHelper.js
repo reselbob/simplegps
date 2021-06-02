@@ -1,3 +1,5 @@
+const { logger} = require('../logger/logger');
+
 const isNumeric = (num)=> {
     return ! isNaN(num)
   }
@@ -11,13 +13,14 @@ const parseArrayForNumbers = (arr) => {
 
 
 const gpggaParser = (gpsSentence) => {
+    logger.debug({location: 'gpsHelper', gpsSentence})
     const arr = parseArrayForNumbers(gpsSentence.split(','));
     const gpsObj = {};
     gpsObj.messageTypeId = arr[0],
     gpsObj.utcTime = arr[1];
-    gpsObj.latitude = arr[2];
+    gpsObj.latitude = (arr[2]/100).toFixed(6);
     gpsObj.latHemisphere = arr[3];
-    gpsObj.longitude = arr[4];
+    gpsObj.longitude = (arr[4]/100).toFixed(6);
     gpsObj.longHemisphere = arr[5];
     gpsObj.positionFixIndicator = arr[6];
     gpsObj.satelliteNumber = arr[7];
