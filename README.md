@@ -32,7 +32,7 @@ In order to use the project's code you need to have a Linux computer with a GPS 
 
 You'll plug the GPS Dongle into a USB port of your Linux computer or Raspberry Pi as shown in the figure below:
 
-![usb-device](./errata/gps-dongle.jpg)
+![usb-device](https://github.com/reselbob/simplegps/blob/e006c647fc1635ee9f895eb3a607f577d734ff28/errata/gps-dongle.jpg)
 
 ### Identify the device 
 
