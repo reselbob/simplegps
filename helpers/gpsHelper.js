@@ -16,6 +16,8 @@ const parseArrayForNumbers = (arr) => {
 */
 const gpggaLatLongConvert = (gpsObj) => {
 
+    logger.debug({function: 'gpggaLatLongConvert', original: gpsObj});
+
     const lat = (t) => {
         return (Number(t.slice(0, 2)) + (Number(t.slice(2, 9)) / 60))
     }
@@ -25,13 +27,13 @@ const gpggaLatLongConvert = (gpsObj) => {
     }
 
     if (isNumeric(gpsObj.latitude)) {
-
         gpsObj.latitude = lat(gpsObj.latitude.toString());
     }
 
     if (isNumeric(gpsObj.longitude)) {
         gpsObj.longitude = lng(gpsObj.longitude.toString());
     }
+    logger.debug({function: 'gpggaLatLongConvert', converted: gpsObj});
     return gpsObj
 }
 
