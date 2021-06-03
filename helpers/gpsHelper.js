@@ -29,7 +29,6 @@ const gpggaLatLongConvert =  (gpsObj) => {
     return gpsObj
 }
 
-
 const gpggaParser = (gpsSentence) => {
     logger.debug({location: 'gpsHelper', gpsSentence})
     const arr = parseArrayForNumbers(gpsSentence.split(','));
@@ -53,5 +52,7 @@ const gpggaParser = (gpsSentence) => {
     return gpsObj
 
 }
+
+
 
 module.exports = {gpggaParser, gpggaLatLongConvert};
