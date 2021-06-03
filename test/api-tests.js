@@ -50,6 +50,27 @@ describe('API Tests: ', () => {
             });
     }).timeout(5000);
 
+    it('Distance at some location is zero', async function () {
+        //Current Location Test
+        await waiter();
+        await supertest(server)
+            .get('/currentLocation')
+            .set('Accept', 'application/json')
+            .then(async (res) => {
+                expect(res.body).to.be.an('object');
+                const location = res.body;
+                const locationRes = await supertest(server)
+                    .post('/distanceFromMe')
+                    .set('Content-type', 'application/json')
+                    .send(location);
+                logger.debug({ test: 'Distance at some location is zero', result: res.body })
+                expect(locationRes.status).to.equal(200);
+                expect(isNumeric(locationRes.body.distance)).to.be.true;
+                expect(locationRes.body.unit).to.be.equal('m');
+                expect(parseFloat(locationRes.body.distance)).to.be.below(1);
+            });
+    }).timeout(5000);
+
     it('Can access GET distance', async function () {
         const yourLocation = {
             latitude: 3401.2106,

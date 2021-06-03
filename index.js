@@ -75,7 +75,7 @@ Example
 */
 app.post('/distanceFromMe', (req, res) => {
   const yourLocation = gpggaLatLongConvert(req.body);
-  const myLocation = getLastGps();
+  const myLocation = gpggaLatLongConvert(getLastGps());
   const distance = getDistance(myLocation, yourLocation);
   res.send(distance);
 })

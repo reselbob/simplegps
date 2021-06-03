@@ -1,4 +1,5 @@
 const Distance = require('geo-distance')
+const { logger } = require('../logger/logger');
 
 /*
   takes a JSON structures as follows
@@ -56,6 +57,7 @@ const getDistance = (myLocation, yourLocation) => {
     };
 
     const distance = Distance.between(mine, yours);
+    logger.debug({function: 'getDistance',mine, yours, distance });
     const result = distance.human_readable();
 
     return result;
